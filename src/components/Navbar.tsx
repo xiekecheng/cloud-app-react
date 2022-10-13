@@ -17,9 +17,9 @@ const Navbar = () => {
 				</div>
 
 				{/* 按钮组 */}
-				<div className='hidden sm:flex'>
-					<button>Sign In</button>
-					<button>Sign Up</button>
+				<div className='hidden sm:flex gap-4'>
+					<button className='px-4 py-2'>Sign In</button>
+					<button className='px-4 py-2'>Sign Up</button>
 				</div>
 				<div className='block sm:hidden cursor-pointer' onClick={() => setNav(!nav)}>
 					{

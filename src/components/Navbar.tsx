@@ -1,14 +1,16 @@
 import React, { useState } from 'react'
 import { BsList, BsXLg } from "react-icons/bs";
+import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+
 const Navbar = () => {
 	const [nav, setNav] = useState(false)
 	return (
-		<div className='w-screen h-[80px] fixed bg-gray-200 shadow-xl shadow-gray-300'>
+		<div className='w-screen h-[80px] fixed bg-gray-200 shadow-xl z-10'>
 			<div className='flex justify-between items-center h-full mx-auto p-4'>
 				<div className='flex items-center gap-4'>
 					<h1 className='text-3xl sm:text-4xl font-bold'>Brand.</h1>
 					<ul className='gap-4 text-xl hidden sm:flex'>
-						<li className='border-b'>Home</li>
+						<li className='border-b'><Link to="test1" spy={true} smooth={true} duration={500}>Home</Link></li>
 						<li className='border-b'>About</li>
 						<li className='border-b'>Support</li>
 						<li className='border-b'>Platform</li>
@@ -18,7 +20,7 @@ const Navbar = () => {
 
 				{/* 按钮组 */}
 				<div className='hidden sm:flex gap-4'>
-					<button className='px-4 py-2'>Sign In</button>
+					<button className='px-4 py-2 bg-transparent text-indigo-600'>Sign In</button>
 					<button className='px-4 py-2'>Sign Up</button>
 				</div>
 				<div className='block sm:hidden cursor-pointer' onClick={() => setNav(!nav)}>
